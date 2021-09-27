@@ -39,7 +39,8 @@ class ListAccountAdapter(private val listAccount: ArrayList<Accounts>) :
 
         holder.itemView.setOnClickListener {
             val moveDetail = Intent(mContext,DetailActivity::class.java)
-            moveDetail.putExtra(DetailActivity.EXTRA_PERSON,listAccount[position])
+            val account = listAccount[position]
+            moveDetail.putExtra(DetailActivity.EXTRA_PERSON,account)
             mContext.startActivity(moveDetail)
         }
     }
