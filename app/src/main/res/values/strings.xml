@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Submission1GitHubUser</string>
     <string name="accounts_name">Account Name</string>
-    <string name="username">Username</string>
+    <string name="uname">Username</string>
+    <string name="img">img</string>
+    <string name="imgAvatar">gambarAvatar</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
     <!-- Other string resources-->
 
     <string-array name="username">

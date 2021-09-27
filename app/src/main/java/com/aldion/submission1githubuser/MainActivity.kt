@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aldion.submission1githubuser.adapter.ListAccountAdapter
 import com.aldion.submission1githubuser.model.Accounts
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvAccouts: RecyclerView
@@ -22,21 +20,31 @@ class MainActivity : AppCompatActivity() {
         showRecyclerList()
     }
 
-    private val listHeroes: ArrayList<Accounts>
+    private val listAccount: ArrayList<Accounts>
         get() {
-            val gson = Gson()
-            val itemType = object : TypeToken<List<Accounts>>() {}.type
-            var listAccount = ArrayList<Accounts>()
-            listAccount = gson.fromJson<List<Accounts>>(itemListJsonString, itemType)
-//            val dataName = resources.getStringArray(R.array.data_name)
-//            val dataDescription = resources.getStringArray(R.array.data_description)
-//            val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
-
+            val dataName = resources.getStringArray(R.array.name)
+            val dataUsername = resources.getStringArray(R.array.username)
+            val dataPhoto = resources.obtainTypedArray(R.array.avatar)
+            val dataCompany = resources.getStringArray(R.array.company)
+            val dataLocation = resources.getStringArray(R.array.location)
+            val dataRepository = resources.getStringArray(R.array.repository)
+            val dataFollowers = resources.getStringArray(R.array.followers)
+            val dataFollowing = resources.getStringArray(R.array.following)
+            val listAccount = ArrayList<Accounts>()
             for (i in dataName.indices) {
-                val hero = Hero(dataName[i], dataDescription[i], dataPhoto.getResourceId(i, -1))
-                listHero.add(hero)
+                val account = Accounts(
+                    dataName[i],
+                    dataUsername[i],
+                    dataPhoto.getResourceId(i, -1),
+                    dataCompany[i],
+                    dataLocation[i],
+                    dataRepository[i],
+                    dataFollowers[i],
+                    dataFollowing[i]
+                )
+                listAccount.add(account)
             }
-            return listHero
+            return listAccount
         }
 
     private fun showRecyclerList() {
