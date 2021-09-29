@@ -18,7 +18,6 @@ class ListAccountAdapter(private val listAccount: ArrayList<Accounts>) :
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvUsername: TextView = itemView.findViewById(R.id.tv_item_username)
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -32,19 +31,18 @@ class ListAccountAdapter(private val listAccount: ArrayList<Accounts>) :
         Glide.with(holder.itemView.context)
             .load(listAccount[position].avatar).thumbnail(0.9f)
             .into(holder.imgPhoto)
-        holder.tvName.text = listAccount[position].username
-        holder.tvUsername.text = listAccount[position].name
+        holder.tvName.text = listAccount[position].name
+        holder.tvUsername.text = listAccount[position].username
 
         val mContext = holder.itemView.context
 
         holder.itemView.setOnClickListener {
-            val moveDetail = Intent(mContext,DetailActivity::class.java)
+            val moveDetail = Intent(mContext, DetailActivity::class.java)
             val account = listAccount[position]
-            moveDetail.putExtra(DetailActivity.EXTRA_PERSON,account)
+            moveDetail.putExtra(DetailActivity.EXTRA_PERSON, account)
             mContext.startActivity(moveDetail)
         }
     }
 
     override fun getItemCount(): Int = listAccount.size
-
 }

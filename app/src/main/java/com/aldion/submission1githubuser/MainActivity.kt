@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         rvAccouts = findViewById(R.id.rv_accounts)
         rvAccouts.setHasFixedSize(true)
         list.addAll(listAccount)
@@ -31,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             val dataFollowers = resources.getStringArray(R.array.followers)
             val dataFollowing = resources.getStringArray(R.array.following)
             val listAccount = ArrayList<Accounts>()
+
             for (i in dataName.indices) {
                 val account = Accounts(
                     dataName[i],
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
                 )
                 listAccount.add(account)
             }
+            dataPhoto.recycle()
             return listAccount
         }
 

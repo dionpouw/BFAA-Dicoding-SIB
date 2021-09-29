@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Submission1GitHubUser</string>
+    <string name="app_name">GitHub Account</string>
     <string name="accounts_name">Account Name</string>
     <string name="imgAvatar">gambarAvatar</string>
     <string name="company">Company</string>
@@ -7,6 +7,9 @@
     <string name="following">Following</string>
     <string name="followers">Followers</string>
     <string name="repository">Repository</string>
+    <string name="github_slogan">Where the world builds software</string>
+    <string name="github">Github</string>
+    <string name="logo_github">Logo Github</string>
     <!-- Other string resources-->
 
     <string-array name="username">
